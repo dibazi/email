@@ -13,6 +13,6 @@ if(isset($_POST['submit'])){
     $txt = "You have received an e-mail from ".$name.".\n\n".$message;
 
     mail($mailTo,$subject, $txt, $header);
-    header("Location: email/index.php");
+    header("Location: http://localhost:5500/");
 }
 

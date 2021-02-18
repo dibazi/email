@@ -1,4 +1,21 @@
+<?php
 
+if(isset($_POST['submit'])){
+
+    
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
+    $emailfrom = $_POST['email'];
+    $message = $_POST['message'];
+
+    $mailTo = "info@senga-service.com";
+    $header = "From: ".$emailfrom;
+    $txt = "You have received an e-mail from ".$name.".\n\n".$message;
+
+    mail($mailTo,$subject, $txt, $header);
+    header("Location: http://localhost:5500/");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +31,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="contact.php" method="post">
+        <form  method="post">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Name </label>
               <input type="text" name="name"  id="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -36,7 +53,6 @@
             </div>
             <div class="container pt-3">
                 <button  type="submit" class="btn btn-primary">Submit</button>  
-
             </div>
           </form>
     </div>
