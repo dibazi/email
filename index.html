@@ -1,10 +1,4 @@
 
-<?php
-
-print_r($_POST);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,23 +14,30 @@ print_r($_POST);
 </head>
 <body>
     <div class="container">
-        <form action="/contact.php" method="POST">
+        <form action="contact.php" method="post">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Name </label>
-              <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="name"  id="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Subject </label>
+                <input type="text" name="subject"  id="subject" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" name="email" id="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
 
             <div class="form-floating">
-                <textarea name="message" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <textarea name="message" id="message" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Comments</label>
             </div>
-            
-           <div class="container pt-3"> <button type="submit" name="submit" class="btn btn-primary">Submit</button> </div> 
+            <div class="container pt-3">
+                <button  type="submit" name="submit" class="btn btn-primary">Submit</button>  
+
+            </div>
           </form>
     </div>
 </body>
